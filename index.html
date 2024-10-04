@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Button</title>
+  <h1>COLOUR CHANGE </h1>
+  <style>
+    body {
+      transition: background-color 0.5s;
+    }
+    .button {
+      padding: 20px 50px;
+      margin: 5px;
+      border: 1px solid #000;
+      cursor: pointer;
+    }
+    .reset-btn {
+      background-color: white;
+    }
+    .default-btn {
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="button" id="redBtn" style="background-color: red;" onclick="changeColor('red', 'red')">RED</button>
+  <button class="button" id="blueBtn" style="background-color: blue;" onclick="changeColor('blue', 'blue')">BLUE</button>
+  <button class="button" id="greenBtn" style="background-color: green;" onclick="changeColor('green', 'green')">GREEN</button>
+  <button class="button reset-btn" id="resetBtn" onclick="resetColors()">RESET</button>
+
+  <script>
+    function changeColor(backgroundColor, buttonColor) {
+      document.body.style.backgroundColor = backgroundColor;
+
+      // Reset button colors
+      document.getElementById('redBtn').style.backgroundColor = 'red';
+      document.getElementById('blueBtn').style.backgroundColor = 'blue';
+      document.getElementById('greenBtn').style.backgroundColor = 'green';
+
+      // Change background color of clicked button to default
+      event.target.style.backgroundColor = buttonColor;
+    }
+
+    function resetColors() {
+      document.body.style.backgroundColor = ''; // Resets to default background
+      document.getElementById('redBtn').style.backgroundColor = 'white';
+      document.getElementById('blueBtn').style.backgroundColor = 'white';
+      document.getElementById('greenBtn').style.backgroundColor = 'white';
+    }
+  </script>
+
+</body>
+</html>
